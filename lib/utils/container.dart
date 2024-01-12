@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:sms_application_flutter/utils/text-styles.dart';
 
@@ -22,15 +20,10 @@ class CustomContainer extends StatelessWidget {
               : Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: IconButton(
-                    onPressed: () {
-                      // pop(context);
-                    },
-                    icon: Icon(
-                      iconVar,
-                      size: 24,
-                      color: Colors.white,
-                    ),
-                  ),
+                      onPressed: () {
+                        // pop(context);
+                      },
+                      icon: iconVar),
                 ),
           Padding(
               padding: const EdgeInsets.only(left: 20),

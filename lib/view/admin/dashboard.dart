@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sms_application_flutter/utils/app_colors.dart';
+
+import '../../utils/container.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -20,6 +23,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Drawer
+                  CustomContainer(
+                      iconVar: Icon(
+                        Icons.dashboard,
+                        size: 20,
+                        color: AppColors.black,
+                      ),
+                      text: "DashBoard")
                 ],
               )
             ],
