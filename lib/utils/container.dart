@@ -10,8 +10,8 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      decoration: const BoxDecoration(color: AppColors.darkBlue),
+      // height: 80,
+      // decoration: const BoxDecoration(color: AppColors.darkBlue),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -19,17 +19,13 @@ class CustomContainer extends StatelessWidget {
               ? Text("")
               : Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(
-                      onPressed: () {
-                        // pop(context);
-                      },
-                      icon: iconVar),
+                  child: Row(
+                    children: [Icon(iconVar)],
+                  ),
                 ),
-          Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text(text,
-                  style: AppTextStyles.textStyleBoldBodyMedium
-                      .copyWith(color: AppColors.white)))
+          Text(text,
+              style: AppTextStyles.textStyleBoldBodyMedium
+                  .copyWith(color: AppColors.black))
         ],
       ),
     );
