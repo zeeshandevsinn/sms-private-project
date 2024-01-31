@@ -27,9 +27,11 @@ class CustomViewStudentContainer extends StatelessWidget {
           child: Column(
             children: [
               ListTile(
-                leading: ImageWidget(
-                  profileImage: 'assets/images/logo.jpg',
-                  isRadius: true,
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Center(
+                    child: Icon(Icons.abc),
+                  ),
                 ),
                 title: Text(
                   title,
