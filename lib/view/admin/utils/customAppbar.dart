@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import 'package:sms_application_flutter/utils/app_colors.dart';
 import 'package:sms_application_flutter/utils/image_widget.dart';
 import 'package:sms_application_flutter/utils/text-styles.dart';
 

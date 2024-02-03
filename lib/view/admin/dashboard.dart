@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sms_application_flutter/utils/app_colors.dart';
-import 'package:sms_application_flutter/view/admin/utils/customAppbar.dart';
 import 'package:sms_application_flutter/view/admin/utils/custom_view_student_container.dart';
 
 import '../../utils/image_widget.dart';
@@ -70,6 +69,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var size = MediaQuery.of(context).size * 1;
     return Scaffold(
       appBar: AppBar(

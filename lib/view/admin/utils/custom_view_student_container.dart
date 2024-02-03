@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sms_application_flutter/utils/app_colors.dart';
-import 'package:sms_application_flutter/utils/image_widget.dart';
 import 'package:sms_application_flutter/utils/text-styles.dart';
 
+// ignore: must_be_immutable
 class CustomViewStudentContainer extends StatelessWidget {
   CustomViewStudentContainer(
       {super.key,

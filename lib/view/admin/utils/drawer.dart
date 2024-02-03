@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sms_application_flutter/utils/app_colors.dart';
 
+// ignore: must_be_immutable
 class DrawerAdminCustom extends StatelessWidget {
   DrawerAdminCustom({super.key});
   List DashboardDrawertext = [
@@ -65,6 +65,7 @@ class DrawerAdminCustom extends StatelessWidget {
           leading: DashboardDrawerIcon[index],
           title: Text(DashboardDrawertext[index]),
         );
+        return null;
       },
     );
   }
