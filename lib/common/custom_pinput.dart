@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
-import 'package:provider/provider.dart';
 import 'package:sms_application_flutter/utils/app_colors.dart';
 
 // ignore: must_be_immutable

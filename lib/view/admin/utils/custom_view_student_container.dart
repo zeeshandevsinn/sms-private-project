@@ -8,59 +8,63 @@ class CustomViewStudentContainer extends StatelessWidget {
       {super.key,
       required this.title,
       required this.subtitle,
-      required this.containerText});
-  var title = "", subtitle = "", containerText = "";
+      required this.containerText,
+      required this.icons_set});
+  var title = "", subtitle = "", containerText = "", icons_set;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 10.0),
       child: Container(
-        width: 250,
+        width: 270,
         decoration: BoxDecoration(
           color: AppColors.white,
           border: Border.all(color: Color.fromARGB(255, 179, 174, 174)),
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 30,
-                  child: Center(
-                    child: Icon(Icons.abc),
-                  ),
-                ),
-                title: Text(
-                  title,
-                  style: AppTextStyles.textStyleBoldBodyXSmall,
-                ),
-                subtitle: Text(
-                  subtitle,
-                  style: AppTextStyles.textStyleBoldBodyXSmall,
+        child: Column(
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                radius: 30,
+                child: Center(
+                  child: Icon(icons_set),
                 ),
               ),
-              SizedBox(
-                height: 10,
+              title: Text(
+                title,
+                style: AppTextStyles.textStyleBoldBodyXSmall
+                    .copyWith(color: const Color.fromARGB(255, 10, 114, 155)),
               ),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.all(10)),
-                  Text(
-                    containerText,
-                    style: AppTextStyles.textStyleBoldBodyXSmall,
-                  ),
-                  Icon(
-                    Icons.arrow_forward,
-                    color: Colors.black,
-                    size: 12,
-                  )
-                ],
-              )
-            ],
-          ),
+              subtitle: Text(
+                subtitle,
+                style: AppTextStyles.textStyleBoldBodyMedium
+                    .copyWith(fontSize: 20),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Padding(padding: EdgeInsets.all(10)),
+                Text(
+                  containerText,
+                  style: AppTextStyles.textStyleBoldBodyXSmall
+                      .copyWith(fontWeight: FontWeight.bold, fontSize: 12),
+                ),
+                Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black,
+                  size: 12,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            )
+          ],
         ),
       ),
     );

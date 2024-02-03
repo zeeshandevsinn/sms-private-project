@@ -4,6 +4,7 @@ import 'package:sms_application_flutter/utils/text-styles.dart';
 
 import '../utils/app_colors.dart';
 
+// ignore: must_be_immutable
 class OrderContainer extends StatelessWidget {
   OrderContainer(
       {super.key,
