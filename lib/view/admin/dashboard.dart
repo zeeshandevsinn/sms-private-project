@@ -1,8 +1,12 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sms_application_flutter/utils/app_colors.dart';
+import 'package:sms_application_flutter/utils/text-styles.dart';
 import 'package:sms_application_flutter/view/admin/utils/customAppbar.dart';
+import 'package:sms_application_flutter/view/admin/utils/custom_line_chart.dart';
 import 'package:sms_application_flutter/view/admin/utils/custom_view_student_container.dart';
 import 'package:sms_application_flutter/view/admin/utils/drawer.dart';
+import 'package:sms_application_flutter/view/admin/utils/price_points.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -87,8 +91,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           // Second Container (80% width)
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(top: 20, left: 10),
-              // Your layout with rows and columns goes here
+              margin: const EdgeInsets.only(top: 20, left: 10),
+              // My layout with rows and columns goes here
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,6 +128,131 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       ],
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    // height: size.height * .45,
+                    width: size.width * .43,
+                    // color: AppColors.grey,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.Grey),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Admission Overview",
+                                style: AppTextStyles.textStyleBoldBodyMedium,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 20,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                        color: Colors.purple,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10))),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Text(
+                                          "Monday",
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              color: AppColors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Icon(Icons.arrow_downward,
+                                            size: 13, color: Colors.white)
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: size.height * .40,
+                          width: size.width * .40,
+                          child: LineChart(
+                            LineChartData(
+                              gridData: FlGridData(show: true),
+                              titlesData: FlTitlesData(
+                                  rightTitles: AxisTitles(
+                                      sideTitles:
+                                          SideTitles(showTitles: false)),
+                                  topTitles: AxisTitles(
+                                      sideTitles:
+                                          SideTitles(showTitles: false))),
+                              borderData: FlBorderData(
+                                show: true,
+                                border: Border.all(
+                                    color: const Color(0xff37434d), width: 1),
+                              ),
+                              minX: 0,
+                              maxX: 11,
+                              minY: 0,
+                              maxY: 100,
+                              lineBarsData: [
+                                LineChartBarData(
+                                  spots: [
+                                    FlSpot(0, 40), // January
+                                    FlSpot(0, 40), // January
+                                    FlSpot(1, 40), // February
+                                    FlSpot(2, 40), // February
+                                    FlSpot(3, 45), // February
+                                    FlSpot(4, 40), // February
+                                    FlSpot(5, 45), // February
+                                    FlSpot(6, 40), // February
+                                    FlSpot(7, 40), // February
+                                    FlSpot(8, 40),
+                                    // March
+                                    // Add more data points for each month
+                                  ],
+                                  isCurved: true,
+                                  color: Colors.blue,
+                                  dotData: FlDotData(show: false),
+                                  belowBarData: BarAreaData(show: false),
+                                ),
+                                LineChartBarData(
+                                  spots: [
+                                    FlSpot(0, 30), // January
+                                    FlSpot(1, 30), // February
+                                    FlSpot(2, 30), // February
+                                    FlSpot(3, 35), // February
+                                    FlSpot(4, 40), // February
+                                    FlSpot(5, 35), // February
+                                    FlSpot(6, 40), // February
+                                    FlSpot(7, 30), // February
+                                    FlSpot(8, 30), // March
+                                    // Add more data points for each month
+                                  ],
+                                  isCurved: true,
+                                  color: Colors.pink,
+                                  dotData: FlDotData(show: false),
+                                  belowBarData: BarAreaData(show: false),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Container(
+                  //     height: size.height * .40,
+                  //     width: size.width * .40,
+                  //     child: CustomLineChart(LineChartData()))
                 ],
               ),
             ),
