@@ -17,7 +17,7 @@ class CustomViewStudentContainer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 10.0),
       child: Container(
-        width: 270,
+        width: 200,
         decoration: BoxDecoration(
           color: AppColors.white,
           border: Border.all(color: Color.fromARGB(255, 179, 174, 174)),
